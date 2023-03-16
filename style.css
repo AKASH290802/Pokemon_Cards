@@ -1,0 +1,59 @@
+/* Reset the default styles for the game board and cards */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Center the game board */
+  .game-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Style the cards */
+  .card {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Style the images inside the cards */
+  .card img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Flip the card over when it's clicked */
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  /* Show the image inside the flipped card */
+  .card.flipped img {
+    opacity: 1;
+  }
+  
+  #score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
